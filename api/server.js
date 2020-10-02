@@ -179,3 +179,5 @@ app.get("/user/:id", (req, res) => {
 app.get("/*", (req, res) => {
   res.redirect("/");
 });
+
+module.exports = app;
