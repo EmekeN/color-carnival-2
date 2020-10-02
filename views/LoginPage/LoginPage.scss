@@ -1,0 +1,99 @@
+@use "../assets/styles/variables.scss";
+@use "../assets/styles/mixins.scss";
+.LoginPage {
+  width: 30%;
+  min-width: 350px;
+  // max-width: 475px;
+  @include mixins.box-shadow;
+  border-radius: 10%;
+  padding: 3.5rem 2.5rem;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  h1 {
+    text-align: center;
+    margin: auto;
+    padding: 0 0.5rem 1.2rem 0.5rem;
+    background: -webkit-linear-gradient(red, blue);
+    background-clip: text;
+    font-family: cursive;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  form {
+    .error-msg {
+      text-align: right;
+      font-size: 0.8rem;
+      color: variables.$red;
+      font-weight: 500;
+      font-style: italic;
+      display: none;
+      margin-left: auto;
+    }
+
+    .error-msg::after {
+      content: "";
+      width: 25px;
+      height: 25px;
+      z-index: 2;
+      background-image: url("../assets/images/icon-error.svg");
+      position: relative;
+      bottom: 41px;
+      right: 25px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 10px;
+    }
+
+    .login-error-msg {
+      text-align: center;
+      font-size: 1rem;
+      color: variables.$red;
+      font-weight: 500;
+      font-style: italic;
+      display: none;
+      margin: 1rem auto;
+    }
+
+    .login-error-msg::after {
+      content: "";
+      width: 25px;
+      height: 25px;
+      z-index: 2;
+      background-image: url("../assets/images/icon-error.svg");
+      position: relative;
+      top: 12px;
+      left: 10px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      padding: 10px;
+    }
+
+    .error-active {
+      display: block;
+    }
+
+    .text-input {
+      margin-bottom: 15px;
+
+      label {
+        display: none;
+      }
+
+      input {
+        width: 100%;
+        height: variables.$box-height;
+        border-radius: variables.$border-radius;
+        border: thin solid variables.$gray-blue;
+        padding-left: 15px;
+        font-weight: 600;
+        box-sizing: border-box;
+      }
+
+      .input-error-active {
+        border: 2px solid variables.$red;
+      }
+    }
+  }
+}
