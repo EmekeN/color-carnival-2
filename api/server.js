@@ -6,9 +6,10 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
-const mockUsers = require("../utils/mockUsers");
-const { generateGame } = require("../utils/game");
-const getDates = require("../utils/date");
+const mockUsers = require("./utils/mockUsers");
+const { generateGame } = require("./utils/game");
+const getDates = require("./utils/date");
+// const { response } = require("express");
 
 const app = express();
 
@@ -23,7 +24,8 @@ app.listen(3001, () => {
   console.log("Server is listening on port 3001");
 });
 
-//Serve Static Files
+// module.exports = (req, res, next) => {
+  //Serve Static Files
 app.get("*", (req, res, next) => {
   res.sendFile(path.join(__dirname + "/../dist/index.html"));
   next();
@@ -79,7 +81,7 @@ app.post("/logout/:id", (req, res) => {
   }
 });
 
-app.get("/game", (req, res, next) => {
+app.get("/game", (req, res) => {
   /**
    * Client must be authenticated view route
    * Redirect to "/" if not
@@ -179,5 +181,4 @@ app.get("/user/:id", (req, res) => {
 app.get("/*", (req, res) => {
   res.redirect("/");
 });
-
-module.exports = app;
+// }

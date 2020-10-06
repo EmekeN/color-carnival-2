@@ -50,7 +50,7 @@ function ColorGame(props) {
     loadDefaultState();
   }, []);
 
-  let handleColorSelected = async (color) => {
+  const handleColorSelected = async (color) => {
     try {
       let isCorrect =
         gameState.targetColor.red === color.red &&
@@ -68,15 +68,15 @@ function ColorGame(props) {
       setDates(dates);
 
       //update win/losses
-      let { userName, wins, losses } = await API.getUser(userID);
-      setUserName(userName);
-      setWinLoss({ wins, losses });
+      let res = await API.getUser(userID);
+      setUserName(res.userName);
+      setWinLoss({ ...res });
     } catch (err) {
       console.error(`Something went wrong with selecting color: ${err}`);
     }
   };
 
-  let handleLogout = async () => {
+  const handleLogout = async () => {
     try {
       let userID = sessionData.userID;
       let res = await API.logout(userID);

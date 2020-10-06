@@ -12,7 +12,7 @@ class API {
      */
     this.login = async ({ userName, pass }) => {
       try {
-        let res = await fetch("/", {
+        let res = await fetch("/api/user/login", {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
@@ -20,7 +20,7 @@ class API {
           method: "post",
           body: JSON.stringify({
             username: userName,
-            userPass: pass,
+            userpass: pass,
           }),
         });
 
@@ -39,7 +39,7 @@ class API {
      */
     this.logout = async (userID) => {
       try {
-        let res = await fetch(`/logout/${userID}`, {
+        let res = await fetch(`/api/user/logout/${userID}`, {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
@@ -60,7 +60,7 @@ class API {
      */
     this.getDate = async () => {
       try {
-        let res = await fetch(`/date`, {
+        let res = await fetch(`/api/date`, {
           method: "get",
         });
 
@@ -76,7 +76,7 @@ class API {
      */
     this.getGameState = async () => {
       try {
-        let res = await fetch(`/game/state`, {
+        let res = await fetch(`/api/game/state`, {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
@@ -100,7 +100,7 @@ class API {
      */
     this.postGameChoice = async (userID, isCorrect) => {
       try {
-        let res = await fetch(`/game/state/${userID}`, {
+        let res = await fetch(`/api/game/state/${userID}`, {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
@@ -125,7 +125,7 @@ class API {
      */
     this.getUser = async (userID) => {
       try {
-        let res = await fetch(`/user/${userID}`, {
+        let res = await fetch(`/api/user/${userID}`, {
           method: "get",
         });
 

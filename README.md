@@ -1,4 +1,4 @@
-# Color Carnival Summary
+# Color Carnival
 
 ![Color Carnival](./views/assets/images/color_carnival.png)
 
