@@ -1,4 +1,4 @@
-const mockUsers = require("./../utils/mockUsers");
+const mockUsers = require("../../utils/mockUsers");
 /**
  * Get user information
  * @returns {Object} - {userName: String, wins: Number, losses:Number}

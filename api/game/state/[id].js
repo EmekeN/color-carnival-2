@@ -1,5 +1,5 @@
-const { generateGame } = require("./../../utils/game");
-const mockUsers = require("./../../utils/mockUsers");
+const { generateGame } = require("../../../utils/game");
+const mockUsers = require("../../../utils/mockUsers");
 /**
  * Updates users win/loss ratio and returns a new game
  * @returns {Object} - {targetColor: Object, colors: Array}

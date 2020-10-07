@@ -1,4 +1,4 @@
-const getDates = require("../utils/date");
+const getDates = require("./../../utils/date");
 
 /**
  * Get time in NYC & SFO

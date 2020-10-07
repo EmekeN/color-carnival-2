@@ -6,9 +6,9 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
-const mockUsers = require("./utils/mockUsers");
-const { generateGame } = require("./utils/game");
-const getDates = require("./utils/date");
+const mockUsers = require("./../utils/mockUsers");
+const { generateGame } = require("./../utils/game");
+const getDates = require("./../utils/date");
 // const { response } = require("express");
 
 const app = express();

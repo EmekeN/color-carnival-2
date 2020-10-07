@@ -1,4 +1,4 @@
-const mockUsers = require("./../utils/mockUsers");
+const mockUsers = require("../../utils/mockUsers");
 
 /**
  * Route for login
