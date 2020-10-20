@@ -103,7 +103,7 @@ function ColorGame(props) {
         </div>
 
         <div className="color-grid">
-          {gameState && gameState.colors.length > 0
+          {gameState && gameState.colors && gameState.colors.length > 0
             ? gameState.colors.map((color, idx) => {
                 return (
                   <div

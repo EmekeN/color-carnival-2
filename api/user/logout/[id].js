@@ -1,4 +1,4 @@
-const mockUsers = require("./../utils/game")
+const mockUsers = require("./../../../utils/game");
 /**
  * Logs user out
  * @returns {Object} - {isAuthenticated: Boolean, userID: Number}
