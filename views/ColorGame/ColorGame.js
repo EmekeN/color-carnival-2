@@ -120,7 +120,7 @@ function ColorGame(props) {
                   />
                 );
               })
-            : "Loading..."}
+            : ""}
           <div className="color solution">
             <p>Find this color!</p>
             <p>
