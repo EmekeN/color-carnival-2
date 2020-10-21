@@ -4,7 +4,7 @@
 
 ## How to play
 To try out Color Carnival either visit the production link [Color Carnival Prod](https://color-carnival-2.vercel.app/) or open your terminal and navigate to `YOUR_PATH/color-carnvial-2` and run command `npm install` and then `npm start` to start the server on `localhost://3000`.
-Open up your favorite browser and head to `localhost//3001` and you'll be able to sign in with one of the mock accounts outlined in `createUsers.js` ex. `Username: Alexa, Password: abc`. Play the game as much you want and if you sign out your win / loss record is preserved on a Lambda Store.
+Open up your favorite browser and head to `localhost//3000` and you'll be able to sign in with one of the mock accounts outlined in `createUsers.js` ex. `Username: Alexa, Password: abc`. Play the game as much you want and if you sign out your win / loss record is preserved on a Lambda Store.
     
 ## Discussion
 I use Parcel to bundle the code and build the front-end. I have a node server that makes use of [Vercel Serverless Functions](https://vercel.com/docs/serverless-functions/introduction) to make it easier to handle routing and serve up front end files. The front end uses React & React Router to handle navigation in the single page app. 
