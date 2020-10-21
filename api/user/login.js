@@ -5,11 +5,12 @@
 module.exports = async (req, res) => {
   const redis = require("redis");
   const { promisify } = require("util");
-  const { host, port, password } = require("./../../utils/config");
+  const { host, port, password, url} = require("./../../utils/config");
   const client = redis.createClient({
-    host: host,
-    port: port,
-    password: password
+    // host: host,
+    // port: port,
+    // password: password,
+    url: url
   });
 
   client.on("connect", () => {
