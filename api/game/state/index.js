@@ -1,4 +1,4 @@
-const {generateGame} = require("./../../utils/game");
+const {generateGame} = require("./../../../utils/game");
 /**
  * Generates a game and returns the state
  * @returns {Object} - {targetColor: Object, colors: Array}

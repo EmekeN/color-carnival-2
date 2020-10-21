@@ -1,6 +1,10 @@
 const redis = require("redis");
+const {host, port, password, url} = require("./config");
 const client = redis.createClient({
-  url: process.env.REDIS_URL,
+  host: host,
+  port: port,
+  password: password,
+  // url: url,
 });
 
 client.on("connect", () => {
@@ -67,12 +71,30 @@ mockUsers.forEach((user) => {
   );
 });
 
-// client.hgetall("Oscar123", (err, reply) => {
-//   if (err) {
-//     console.log(`Writing to redis cache failed with error: ${err}`);
-//   } else {
-//     console.log(reply);
-//   }
-// })
+client.hgetall("Oscar123", (err, reply) => {
+  if (err) {
+    console.log(`Writing to redis cache failed with error: ${err}`);
+  } else {
+    console.log(reply);
+  }
+})
+
+client.hgetall("Roger321", (err, reply) => {
+  if (err) {
+    console.log(`Writing to redis cache failed with error: ${err}`);
+  } else {
+    console.log(reply);
+  }
+})
+
+client.hgetall("sdrtsrt", (err, reply) => {
+  if (err) {
+    console.log(`Writing to redis cache failed with error: ${err}`);
+  } else {
+    console.log(reply);
+  }
+})
+
+
 
 client.quit();
