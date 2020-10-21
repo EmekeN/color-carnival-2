@@ -3,19 +3,8 @@
  * @returns {Promise} {isAunthenticated: boolean, userID: Number}
  */
 module.exports = async (req, res) => {
-  const redis = require("redis");
   const { promisify } = require("util");
-  const { host, port, password, url} = require("./../../utils/config");
-  const client = redis.createClient({
-    // host: host,
-    // port: port,
-    // password: password,
-    url: url
-  });
-
-  client.on("connect", () => {
-    console.log("Connected to Redis Server");
-  });
+  const { client } = require("../../utils/redisConfig");
 
   try {
     console.log(`Request username: ${req.body.username}`);
@@ -37,7 +26,5 @@ module.exports = async (req, res) => {
   } catch (err) {
     console.log(`Unexpected server error of ${err}`);
     res.status(404).send(`Error of ${err} not handled by server`);
-  } finally {
-    client.quit();
   }
 };

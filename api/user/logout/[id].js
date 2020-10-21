@@ -5,18 +5,8 @@ const mockUsers = require("./../../../utils/game");
  */
 
 module.exports = async (req, res) => {
-  const redis = require("redis");
   const { promisify } = require("util");
-  const { host, port, password } = require("./../../../utils/config");
-  const client = redis.createClient({
-    host: host,
-    port: port,
-    password: password,
-  });
-
-  client.on("connect", () => {
-    console.log("Connected to Redis Server");
-  });
+  const { client } = require("./../../../utils/redisConfig");
 
   try {
     let userKey = req.query.member;
@@ -26,7 +16,7 @@ module.exports = async (req, res) => {
 
     if (user) {
       client.hmset(userKey, ["isAunthenticated", "false"]);
-      console.log(`User ${user.userName} is signed out`);
+      console.log(`User ${userKey} is signed out`);
       res.send({ isAuthenticated: false, userID: "" });
     } else {
       res.status(400).send("User Does Not Exist");
@@ -34,7 +24,5 @@ module.exports = async (req, res) => {
   } catch (err) {
     console.error(`Unexpected server error of ${err}`);
     res.status(404).send(`Error of ${err} not handled by server`);
-  } finally {
-    client.quit();
   }
 };
